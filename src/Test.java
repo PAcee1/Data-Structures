@@ -2,6 +2,7 @@
 import com.enbuys.linkedlist.LinkedList;
 
 import java.util.Queue;
+import java.util.TreeSet;
 
 /**
  * @Author: Pace
@@ -32,6 +33,21 @@ public class Test {
         ListNode res = (new Test()).reverseList(head);
         System.out.println(res);
         System.out.println(5/2);
+    }
+
+    public int uniqueMorseRepresentations(String[] words) {
+        String[] codes = {".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
+
+        // 使用treeset保存，这样重复的就会自动过滤
+        TreeSet<String> set = new TreeSet<String>();
+        for(String word : words){
+            StringBuilder sb = new StringBuilder();
+            for(int i=0;i<word.length();i++){
+                sb.append(codes[word.charAt(i)-'a']);
+            }
+            set.add(sb.toString());
+        }
+        return set.size();
     }
 
 }

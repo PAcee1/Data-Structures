@@ -1,5 +1,7 @@
 package com.enbuys.tree.bst;
 
+import java.util.ArrayList;
+
 /**
  * @Author: Pace
  * @Data: 2018/12/18 11:51
@@ -19,7 +21,10 @@ public class Main {
         //  / \    \   //
         // 2  4     8  //
         /////////////////
-        bst.postOrder();
-
+        //bst.levelOrder();
+//        System.out.println(bst.removeMin());
+//        System.out.println(bst.removeMax());
+        bst.remove(3);
+        System.out.println(bst);
     }
 }

@@ -150,6 +150,24 @@ public class LinkedList<E> {
         return remove(size - 1);
     }
 
+    // 删除链表中元素
+    public void removeElement(E e){
+        Node cur = dummyHead.next;
+        while(cur !=null){
+            if(cur.next.e.equals(e)){
+                break;
+            }else{
+                cur = cur.next;
+            }
+        }
+        if(cur.next != null){
+            Node delNode = cur.next;
+            cur.next = delNode.next;
+            delNode.next = null;
+            size --;
+        }
+    }
+
     @Override
     public String toString(){
         StringBuilder result = new StringBuilder();
