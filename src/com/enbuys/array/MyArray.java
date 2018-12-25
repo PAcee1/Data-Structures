@@ -19,6 +19,13 @@ public class MyArray<E> {
         this(10);
     }
 
+    public MyArray(E[] arr){
+        data = (E[])new Object[arr.length];
+        for(int i = 0 ; i < arr.length ; i ++)
+            data[i] = arr[i];
+        size = arr.length;
+    }
+
     // 获取数组元素个数
     public int getSize(){
         return size;
@@ -143,6 +150,16 @@ public class MyArray<E> {
             return true;
         }
         return false;
+    }
+
+    // 数的交换
+    public void swap(int i,int j){
+        if(i<0 || i>=size || j<0 || j>=size){
+            throw new IllegalArgumentException("Index is Illegal");
+        }
+        E e = data[i];
+        data[i] = data[j];
+        data[j] = e;
     }
 
     @Override
